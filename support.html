@@ -1,0 +1,201 @@
+<!--sponsor us page-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheet.css">  <!--link stylesheet-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  <!--link external icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">  <!--link external fonts-->
+
+<title>Support Us</title>
+</head>
+<body>
+   
+    <!--header--> 
+    <section class="header2">
+        <nav>
+           
+           <a href="index.html"><img src="images/classpass.png"></a>
+           <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>       
+     
+      <ul>
+            <li><a  href="support.html">Support Us</a></li>
+            <li><a class="active" href="index.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="https://kidshelpphone.ca/">Kids Help Phone</a></li>
+            <li><img src="images/moon.png" id="icon2"></li>
+          </ul>
+    
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i> 
+        </nav>
+    
+    <div class="text-box">
+        <h1>Support Us</h1> 
+    </div>
+    </section>
+
+       <!--for the menyu bar -->
+       <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+            function hideMenu(){
+            navLinks.style.right = "-200px";
+    }
+    </script>
+
+
+<script>
+    var icon2 = document.getElementById("icon2");
+     
+    if(localStorage.getItem("theme") == null){
+       localStorage.setItem("theme", "light");
+    }
+    
+    
+    let localData = localStorage.getItem("theme");
+    
+    if(localData=="light"){
+       icon2.src== "images/moon.png";
+       document.body.classList.remove("dark-mode");
+    }
+    else if(localData=="dark"){
+       icon2.src== "iamges/sun.png";
+       document.body.classList.add("dark-mode");
+    }
+    
+    icon2.onclick = function(){
+       document.body.classList.toggle("dark-mode");
+       if(document.body.classList.contains("dark-mode")){
+           icon2.src="images/sun.png";
+           localStorage.setItem("theme","dark");
+       }
+       else{
+           icon2.src="images/moon.png";
+           localStorage.setItem("theme","light");
+       }
+    }
+    
+    </script>
+    
+    
+
+
+<!--table-->
+
+<section class="table">
+    <div class="row">
+<div class="table-col">
+
+    <h1>Our Top Donors</h1>
+    <p>A table of our top donors. Help us bring our vision to life, donate now.</p>
+
+<table id="table">
+    <tr>
+        <th>Name</th>
+        <th>Amount Donated</th>
+        <th>Name</th>
+        <th>Amount Donated</th>
+    </tr>
+    <tr>
+        <td>Elon Musk</td>
+        <td>$100,000</td>
+        <td>Jeff Bezos</td>
+        <td>$90,000</td>
+    </tr>
+    <tr>
+        <td>Mark Twian</td>
+        <td>$70,000</td>
+        <td>Gustavo French</td>
+        <td>$30,000</td>
+    </tr>
+    <tr>
+        <td>Cuban Tiger</td>
+        <td>$20,000</td>
+        <td>Levi Ackerman</td>
+        <td>$5,000</td>
+    </tr>
+    <tr>
+        <td>Erem Yeager</td>
+        <td>$2,000</td>
+        <td>Light Yagami</td>
+        <td>$1,000</td>
+    </tr>
+    <tr>
+        <td>Mikasa Ackerman</td>
+        <td>$500</td>
+        <td>Jean Maki</td>
+        <td>$200</td>
+    </tr>
+</table> 
+</div>
+
+<div class="table-col"> 
+<!--<img src="images/infopic1.jpg">-->
+<section class="donate">
+    <h1>Donate Now</h1>
+    <br>
+    <br>
+    <a  href="https://www.patreon.com/" class="button">Donate</a>
+  </section>
+</div>
+</div>
+</section>
+
+<!--youtube videos api-->
+<!-- 
+<script>
+    fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC8w4I8t2OpqoOpzzNT1c2dg&maxResults=10&order=rating&key=AIzaSyDT8cKnjVvbJ7Ly1zEk8LRso097Ekxhd08")
+    .then((result)=>{
+        return result.json()
+    }).then((data)=>{
+        console.log(data)
+        let videos = data.items
+        let videoContainer = document.querySelector(".youtube-container")
+        for(video of videos){
+            
+         videoContainer.innerHTML += '<img src="${video.snippet.thumbnails.default.url}">'
+        }
+    })
+</script>
+<div class="youtube">
+<h1>Youtube Videos</h1>
+<div class="youtube-container">
+</div>
+</div> -->
+
+
+
+
+<!--contact/support button-->
+<section class="contact">
+    <h1>Have Any Questions?</h1>
+    <br>
+    <br>
+    <a href="contact.html" class="button">Contact Us</a>
+    
+    </section>
+    
+<!--footer-->
+<section class="footer">
+    
+    <h4>ClassPass An Interactive Classroom</h4>
+    <div class="icon">
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-youtube"></i>
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-linkedin"></i>
+        <i class="fa fa-instagram"></i>
+    </div>
+<p>Made by Jashan Judge</p>
+</section>
+<script src="javascript.js"></script>
+</body>
+</html>
