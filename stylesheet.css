@@ -140,7 +140,7 @@ nav img{
 }
 
 .nav-links ul li a{
-  font-family: "Copperplate";
+  font-family: "arial";
   text-decoration: none;
   font-size: 20px;
   color:white;
@@ -178,7 +178,7 @@ nav img{
 }
 
 .text-box h1{
-  font-size: 80px;
+  font-size:65px;
   font-weight: bold;
   background-color:transparent !important;
   
