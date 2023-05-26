@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- <script src="myscript.js"></script> -->
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+	
+
+    <title>Survey - AIR</title>
+</head>
+<body>
+	<div class="container">
+        <div class="left-container">
+            <h1>AIR</h1>
+            <h3 class="menu-link"><a href="index.html">Home</a></h3>
+            <h3 class="menu-link"><a href="facilities.html">Facilities</a></h3>
+            <h3 class="menu-link"><a href="publications.html">Publications</a></h3>
+            <h3 class="menu-link"><a href="survey.html"><u>Survey</u></a></h3>
+            <h3 class="menu-link"><a href="teaching.html">Teaching</a></h3>
+            <h3 class="menu-link"><a href="links.html">Links</a></h3>
+            <h3 class="menu-link"><a href="group.html">Group</a></h3>
+            <h3 class="menu-link"><a href="positions.html">Positions</a></h3>
+            <h3 class="menu-link"><a href="funding.html">Funding</a></h3>
+            <h3 class="menu-link"><a href="sponsors.html">Sponsors</a></h3>
+            <h3 class="menu-link"><a href="news.html">News</a></h3>
+            <h3 class="menu-link"><a href="contact.html">Contact</a></h3>
+            <!-- Content of the left container -->
+        </div>
+        <div class="right-container">
+            <h1>Atmospheric Research Innovations Lab </h1>
+            
+        <h3>Residential Home Energy Consumption Survey</h3>
+        
+        <p> 
+            Did you know that buildings are responsible for 40% of global energy use?<br>
+        <br>
+        <!-- <img class="shadows" src="../Figures/OppositeHouseNarrow.jpg" height:50%; width= 100%;/> -->
+       <img src="OppositeHouseNarrow.jpg" class="shadows">
+        <br>  
+        <p class="figure" > Figure 1: Opposite House, designed by Atelier RZLBD, Toronto, Canada </p>
+        
+        In an effort to combat climate change, this survey attempts to collect data for academic research on
+        building energy consumption in Canada and the United States. Data will be used to understand build-
+        ing performance, develop prediction and design models, and lead innovation to reduce building energy
+        consumption. This study is organized by Amir A. from Environmental Engineering at the
+        University of Guelph. Please complete this form and email it to aliabadi@uoguelph.ca. To access the
+        form visit:
+        </p>
+        <br>
+
+		<div class="grey-container">
+			<form name="survey" onsubmit="event.preventDefault(); printUserInputs();">
+  
+			<h3>1. Basic Information About Your Residential Homes</h3> <br><br>
+			<br>
+			<div class="adjust-size">
+			<!-- <label for="q1" >Q1. Your postal code (Example: N1G 1X9 or 02119):</label>
+			<input type="text" id="q1" name="q1">
+			 <p class="error postal-code-error"></p> -->
+			  <label for="q1" >Q1. Your postal code (Example: N1G 1X9 or 02119):</label>
+			  <input type="text" id="q1" name="postal-code">
+			</div>
+
+			<div class="adjust-size">
+			  <label for="q2">Q2. Type of your residential home:</label>
+			  <select id="q2" name="q2">
+				<option value="single-detached-house">Single-detached house</option>
+				<option value="semi-detached-house">Semi-detached house</option>
+				<option value="row-house">Row house</option>
+				<option value="apartment-less-than-5">Apartment in a building with less than 5 storeys</option>
+				<option value="apartment-more-than-5">Apartment in a building with more than 5 storeys</option>
+				<option value="other">Other</option>
+			  </select>
+			</div>
+			
+			<div class="adjust-size none" id="q2other">
+			  <label for="q2other-input">Other:</label>
+			  <input type="text" id="q2other-input" name="q2other">
+			</div>
+			
+			<div class="adjust-size">
+			  <label for="q3">Q3. Number of people living in your home:</label>
+			  <select id="q3" name="q3">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			  </select>
+			</div>
+  
+  
+			<div class="adjust-size">
+			  <label for="q4" >Q4. What is the approximate footprint area of your residential home? For multi-storey buildings, the footprint area is only associated with one storey of the building; please exclude garages, yards, and other spaces that are not heated or cooled:</label>
+			  <select id="q4" name="q4">
+				<option value="tiny">Tiny: about 50 m&sup2; or 500 ft&sup2;</option>
+				<option value="small">Small: about 100 m&sup2; or 1000 ft&sup2;</option>
+				<option value="medium">Medium: about 200 m&sup2; or 2000 ft&sup2;</option>
+				<option value="large">Large: about 300 m&sup2; or 3000 ft&sup2;</option>
+				<option value="supersize">Supersize: about 400 m&sup2; or 4000 ft&sup2;</option>
+				<option value="other">Other</option>
+			  </select>
+			</div>
+  
+			<div class="adjust-size none" id="q4other">
+			  <label for="q4other-input">Other:</label>
+			  <input type="text" id="q4other-input" name="q4other">
+			</div>
+  
+  
+			<div class="adjust-size wrap">
+			  <label for="q5">Q5. How many storeys in your residential home are heated and/or cooled?</label>
+			  <select id="q5" name="q5">
+				<option value="1">1 (flat apartment or bungalow house with possibly a basement)</option>
+				<option value="2">2 (back-split apartment or house with possibly a basement)</option>
+				<option value="3">3 (two-level apartment or house with possibly a basement)</option>
+				<option value="4">4 (three-level apartment or house with possibly a basement)</option>
+				<option value="5">5 (four-level apartment or house with possibly a basement)</option>
+				<option value="other">Other</option>
+			  </select>
+			</div>
+  
+			<div class="adjust-size none" id="q5other">
+			  <label for="q5other-input">Other:</label>
+			  <input type="text" id="q5other-input" name="q5other">
+			</div>
+  
+			
+			<div class="adjust-size wrap">
+			  <label for="q6">Q6. Type of space heating system:</label>
+			  <select id="q6" name="q6">
+				<option value="natural-gas-furnace">Natural gas furnace (most common)</option>
+				<option value="heat-pump">Heat pump powered by electricity (used in moderate climates)</option>
+				<option value="electric-baseboard">Baseboard powered by electricity or electric heaters</option>
+				<option value="no-system">I don't have a space heating system</option>
+				<option value="other">Other</option>
+			  </select>
+			</div>
+  
+			<div class="adjust-size none" id="q6other">
+			  <label for="q6other-input">Other:</label>
+			  <input type="text" id="q6other-input" name="q6other">
+			</div>
+			
+  
+			<div class="adjust-size wrap">
+			  <label for="q7">Q7. Type of space cooling system:</label>
+			  <select id="q7" name="q7">
+				<option value="air-conditioning">Air conditioning: vapor compression (most common)</option>
+				<option value="evaporative-cooling">Evaporative cooling system (used in dry climates)</option>
+				<option value="no-system">I don't have a space cooling system</option>
+				<option value="other">Other</option>
+			  </select>
+			</div>
+  
+			<div class="adjust-size none" id="q7other">
+			  <label for="q7other-input">Other:</label>
+			  <input type="text" id="q7other-input" name="q7other">
+			</div>
+			
+  
+			<div class="adjust-size">
+			  <label for="q8">Q8. Type of water heating system:</label>
+			  <select id="q8" name="q8">
+				<option value="natural-gas-water-heater">Natural gas water heater (most common)</option>
+				<option value="electric-water-heater">Electric water heater (less common)</option>
+				<option value="no-system">I don't have a water heating system</option>
+				<option value="other">Other</option>
+			  </select>
+			</div>
+  
+			<div class="adjust-size none" id="q8other">
+			  <label for="q8other-input">Other:</label>
+			  <input type="text" id="q8other-input" name="q8other">
+			</div>
+			
+			
+			<div class="adjust-size wrap">
+			  <label for="q9">Q9. Type of stove/oven system:</label>
+			  <select id="q9" name="q9">
+				<option value="natural-gas">Natural gas</option>
+				<option value="electric">Electric</option>
+				<option value="both">Both natural gas and electric</option>
+				<option value="other">Other</option>
+			  </select>
+			</div>
+  
+			<div class="adjust-size none" id="q9other">
+			  <label for="q9other-input">Other:</label>
+			  <input type="text" id="q9other-input" name="q9other">
+			</div>
+			
+  
+			<div class="adjust-size">
+			  <label>Q10. Which one of the uncommon devices below depend on substantial amount of energy in your home (choose as many as may apply)?</label>
+			</div>
+			<div>
+			  <label for="q10a"><input type="checkbox" id="q10a" name="uncommon-device" value="electric-car">Electric car charged by electricity</label>
+			  <br>
+			  <label for="q10b"> <input type="checkbox" id="q10b" name="uncommon-device" value="fire-place">Fire place powered by natural gas</label>
+			  <br>
+			  <label for="q10c"><input type="checkbox" id="q10c" name="uncommon-device" value="swimming-pool">Swimming pool, sauna, etc.</label>
+			  <br>
+			  <label for="q10d"> <input type="checkbox" id="q10d" name="uncommon-device" value="no-uncommon-devices">No uncommon devices</label>
+			</div>        
+		
+			<div class="adjust-size"> 
+			  <label for="q10e">Other:</label>
+			  <input type="text" id="q10e" name="other-uncommon-devices">
+			</div>
+  
+			<div class="adjust-size">
+			  <label for="year-built">Q11. Approximately when was your residential home built?</label>
+			  <select id="q11" name="year-built">
+				<option value="before-1950s">Before 1950s</option>
+				<option value="between-1950s-and-2000s">Between 1950s and 2000s</option>
+				<option value="after-2000s">After 2000s</option>
+				<option value="unknown">I don't know</option>
+			  </select>
+			</div>
+  
+			<div class="adjust-size">
+			  <label for="energy-retrofit">Q12. When was your residential home retrofitted for energy efficiency?</label>
+			  <select id="q12" name="energy-retrofit">
+				<option value="before-1950s">Before 1950s</option>
+				<option value="between-1950s-and-2000s">Between 1950s and 2000s</option>
+				<option value="after-2000s">After 2000s</option>
+				<option value="never">Never</option>
+				<option value="dont-know">I don't know</option>
+			  </select>
+			</div>
+  
+			<div class = "adjust-size">
+			  <p>Q13. If your home has been retrofitted for energy efficiency, click on all the features that apply to your
+				home. Describe any specifics of the system components (e.g. the size of your photovoltaic panels, etc.)?</p>
+			</div>
+  
+			<div id="checkbox-input-container"></div>
+  
+			<!-- starting redo for q13, the automation gave me way too many problems -->
+  
+			
+			  <label for = "q13a1"> <input type = "checkbox" id = "q13a1" name = "q13a1" value = "air-leak">My home was air-leak was tested and now it is leak-proof</label>
+  
+			<div class="adjust-size none" id="q13a2">
+			  <label for="q13a2">Specifics:</label>
+			  <input type="text" id="q13a2-input" name="q13a2-input">
+			</div>  
+			  <div class="adjust-size">
+			  <label for = "q13b1">  <input type = "checkbox" id = "q13b1" name = "q13b1" value = "energy-efficient windows">I replaced my windows with energy efficient windows (e.g. double or tripple-layer)</label>
+			</div>
+		
+			
+			<div class="adjust-size none" id="q13b2">
+			  <label for="q13b2">Specifics:</label>
+			  <input type="text" id="q13b2-input" name="q13b2-input">
+			</div> 
+			
+			<div class = "adjust-size">
+			  <label for = "q13c1"><input type = "checkbox" id = "q13c1" name = "q13c1" value = "high-efficiency furnace">I installed a high efficiency furnace</label>
+			</div>
+			
+			<div class="adjust-size none" id="q13c2">
+			  <label for="q13c2">Specifics:</label>
+			  <input type="text" id="q13c2-input" name="q13c2-input">
+			</div>
+			
+			<div class = "adjust-size">
+			  <label for = "q13d1"><input type = "checkbox" id = "q13d1" name = "q13d1" value = "increase R -value">I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under
+				roof, etc.)r</label>
+			</div>
+			
+			<div class="adjust-size none" id="q13d2">
+			  <label for="q13d2">Specifics:</label>
+			  <input type="text" id="q13d2-input" name="q13d2-input">
+			</div>
+			
+			<div class = "adjust-size">
+			  <label for = "q13e1"><input type = "checkbox" id = "q13e1" name = "q13e1" value = "photovoltaic system">I installed a photovoltaic system</label>
+			</div>
+			
+			<div class="adjust-size none" id="q13e2">
+			  <label for="q13e2">Specifics:</label>
+			  <input type="text" id="q13e2-input" name="q13e2-input">
+			</div> 
+		  
+			<div class = "adjust-size">
+			<label for = "q13f1"> <input type = "checkbox" id = "q13f1" name = "q13f1" value = "heat pump">I installed a heat pump for home heating</label>
+			</div>
+  
+			<div class="adjust-size none" id="q13f2">
+			  <label for="q13f2">Specifics:</label>
+			  <input type="text" id="q13f2-input" name="q13f2-input">
+			</div>
+  
+			<div class = "adjust-size">
+			  <label for = "q13g1"><input type = "checkbox" id = "q13g1" name = "q13g1" value = "solar thermal collector">I installed a solar thermal collector</label>
+			</div>
+  
+			<div class="adjust-size none" id="q13g2">
+			  <label for="q13g2">Specifics:</label>
+			  <input type="text" id="q13g2-input" name="q13g2-input">
+			</div>
+  
+			<div class = "adjust-size">
+			  <label for = "q13h1"><input type = "checkbox" id = "q13h1" name = "q13h1" value = "thermal energy storage system">I installed a thermal energy storage system</label>
+			</div>
+  
+			<div class="adjust-size none" id="q13h2">
+			  <label for="q13h2">Specifics:</label>
+			  <input type="text" id="q13h2-input" name="q13h2-input">
+			</div>
+  
+			<div class = "adjust-size">
+			  <label for = "q13i1"> <input type = "checkbox" id = "q13i1" name = "q13i1" value = "green roof">I have installed a green roof</label>
+			</div>
+  
+			<div class="adjust-size none" id="q13i2">
+			  <label for="q13i2">Specifics:</label>
+			  <input type="text" id="q13i2-input" name="q13i2-input">
+			</div>
+  
+			<div class = "adjust-size">
+			  <label for = "q13j1"><input type = "checkbox" id = "q13j1" name = "q13j1" value = "other systems">I have installed other systems not described above</label>
+			</div>
+  
+			<div class="adjust-size none" id="q13j2">
+			  <label for="q13j2">Specifics:</label>
+			  <input type="text" id="q13j2-input" name="q13j2-input">
+			</div>
+			
+			<h3>2. Natural Gas or Other Fuel Consumption Data</h3>
+			
+			<input type="file" id="excelFile" accept=".xls,.xlsx"/>
+  
+			<p>OR fill in the table below of your bills for the past 12 months to indicate your natural gas (or other fuel) consumption. Note: the entries below can be populated by referring to your natural gas (or other fuel) bills (e.g. Figure 2 below). Please fill up to 12 entries. It is recommended to consider bills for at least 1 full year of natural gas (of other fuel) consumption. Your bills should come from the utility company in your region, such as Enbridge. If you have consumption data for less than 1 full year, that is still fine.</p>
+			<img src="EnbridgeBill.png" class="img2"/>
+			<p class="figure">Figure 2: Sample natural gas bill with billing period (May 10, 2021 - Jun 10, 2021) and consumption (100.17 m3) boxed in red</p>
+			<br>
+
+
+
+			<p>Q14. Provide Information on up to 12 bills: consumption in cubic meters m^3</p> <br>
+  
+			<div class="adjust-size consumption billing">
+				<label for="q14a1" >Bill 01: Start YYYY</label>
+				<input type="text" id="q14a1" name="q14a1">
+				<label for="q14a2" >MM</label>
+				<input type="text" id="q14a2" name="q14a2">
+				<label for="q14a3" >DD</label>
+				<input type="text" id="q14a3" name="q14a3">
+				<label for="q14a4" >End YYYY</label>
+				<input type="text" id="q14a4" name="q14a4">
+				<label for="q14a5" >MM</label>
+				<input type="text" id="q14a5" name="q14a5">
+				<label for="q14a6" >DD</label>
+				<input type="text" id="q14a6" name="q14a6">
+				<label for="q14a7" >Consumption m^3</label>
+				<input type="text" id="q14a7" name="q14a7">  
+			</div>
+			<p class="error q14a-error"></p>
+	
+			<div class="adjust-size consumption billing">
+				<label for="q14b1" >Bill 02: Start YYYY</label>
+				<input type="text" id="q14b1" name="q14b1">
+				<label for="q14b2" >MM</label>
+				<input type="text" id="q14b2" name="q14b2">
+				<label for="q14b3" >DD</label>
+				<input type="text" id="q14b3" name="q14b3">
+				<label for="q14b4" >End YYYY</label>
+				<input type="text" id="q14b4" name="q14b4">
+				<label for="q14b5" >MM</label>
+				<input type="text" id="q14b5" name="q14b5">
+				<label for="q14b6" >DD</label>
+				<input type="text" id="q14b6" name="q14b6">
+				<label for="q14b7" >Consumption m^3</label>
+				<input type="text" id="q14b7" name="q14b7">
+			</div>
+			<p class="error q14b-error"></p>
+	
+			<div class="adjust-size consumption billing">
+			  <label for="q14c1" >Bill 03: Start YYYY</label>
+			  <input type="text" id="q14c1" name="q14c1">
+			  <label for="q14c2" >MM</label>
+			  <input type="text" id="q14c2" name="q14c2">
+			  <label for="q14c3" >DD</label>
+			  <input type="text" id="q14c3" name="q14c3">
+			  <label for="q14c4" >End YYYY</label>
+			  <input type="text" id="q14c4" name="q14c4">
+			  <label for="q14c5" >MM</label>
+			  <input type="text" id="q14c5" name="q14c5">
+			  <label for="q14c6" >DD</label>
+			  <input type="text" id="q14c6" name="q14c6">
+			  <label for="q14c7" >Consumption m^3</label>
+			  <input type="text" id="q14c7" name="q14c7">
+			</div>
+			<p class="error q14c-error"></p>
+
+			<div class="adjust-size consumption billing">
+			  <label for="q14d1" >Bill 04: Start YYYY</label>
+			  <input type="text" id="q14d1" name="q14d1">
+			  <label for="q14d2" >MM</label>
+			  <input type="text" id="q14d2" name="q14d2">
+			  <label for="q14d3" >DD</label>
+			  <input type="text" id="q14d3" name="q14d3">
+			  <label for="q14d4" >End YYYY</label>
+			  <input type="text" id="q14d4" name="q14d4">
+			  <label for="q14d5" >MM</label>
+			  <input type="text" id="q14d5" name="q14d5">
+			  <label for="q14d6" >DD</label>
+			  <input type="text" id="q14d6" name="q14d6">
+			  <label for="q14d7" >Consumption m^3</label>
+			  <input type="text" id="q14d7" name="q14d7">
+			</div>
+			<p class="error q14d-error"></p>
+	
+			<div class="adjust-size consumption billing">
+			  <label for="q14e1" >Bill 05: Start YYYY</label>
+			  <input type="text" id="q14e1" name="q14e1">
+			  <label for="q14e2" >MM</label>
+			  <input type="text" id="q14e2" name="q14e2">
+			  <label for="q14e3" >DD</label>
+			  <input type="text" id="q14e3" name="q14e3">
+			  <label for="q14e4" >End YYYY</label>
+			  <input type="text" id="q14e4" name="q14e4">
+			  <label for="q14e5" >MM</label>
+			  <input type="text" id="q14e5" name="q14e5">
+			  <label for="q14e6" >DD</label>
+			  <input type="text" id="q14e6" name="q14e6">
+			  <label for="q14e7" >Consumption m^3</label>
+			  <input type="text" id="q14e7" name="q14e7">
+			</div>
+			<p class="error q14e-error"></p>
+	
+			<div class="adjust-size consumption billing">
+			  <label for=" q14f1" >Bill 06: Start YYYY</label>
+			  <input type="text" id="q14f1" name="q14f1">
+			  <label for="q14f2" >MM</label>
+			  <input type="text" id="q14f2" name="q14f2">
+			  <label for="q14f3" >DD</label>
+			  <input type="text" id="q14f3" name="q14f3">
+			  <label for="q14f4" >End YYYY</label>
+			  <input type="text" id="q14f4" name="q14f4">
+			  <label for="q14f5" >MM</label>
+			  <input type="text" id="q14f5" name="q14f5">
+			  <label for="q14f6" >DD</label>
+			  <input type="text" id="q14f6" name="q14f6">
+			  <label for="q14f7" >Consumption m^3</label>
+			  <input type="text" id="q14f7" name="q14f7">
+			</div>
+			<p class="error q14f-error"></p>
+
+	
+			<div class="adjust-size consumption billing">
+			  <label for="q14g1" >Bill 07: Start YYYY</label>
+			  <input type="text" id="q14g1" name="q14g1">
+			  <label for="q14g2" >MM</label>
+			  <input type="text" id="q14g2" name="q14g2">
+			  <label for="q14g3" >DD</label>
+			  <input type="text" id="q14g3" name="q14g3">
+			  <label for="q14g4" >End YYYY</label>
+			  <input type="text" id="q14g4" name="q14g4">
+			  <label for="q14g5" >MM</label>
+			  <input type="text" id="q14g5" name="q14g5">
+			  <label for="q14g6" >DD</label>
+			  <input type="text" id="q14g6" name="q14g6">
+			  <label for="q14g7" >Consumption m^3</label>
+			  <input type="text" id="q14g7" name="q14g7">
+			</div>
+			<p class="error q14g-error"></p>
+	
+			<div class="adjust-size consumption billing">
+			  <label for="q14h1" >Bill 08: Start YYYY</label>
+			  <input type="text" id="q14h1" name="q14h1">
+			  <label for="q14h2" >MM</label>
+			  <input type="text" id="q14h2" name="q14h2">
+			  <label for="q14h3" >DD</label>
+			  <input type="text" id="q14h3" name="q14h3">
+			  <label for="q14h4" >End YYYY</label>
+			  <input type="text" id="q14h4" name="q14h4">
+			  <label for="q14h5" >MM</label>
+			  <input type="text" id="q14h5" name="q14h5">
+			  <label for="q14h6" >DD</label>
+			  <input type="text" id="q14h6" name="q14h6">
+			  <label for="q14h7" >Consumption m^3</label>
+			  <input type="text" id="q14h7" name="q14h7">
+			</div>
+			<p class="error q14h-error"></p>
+	
+			<div class="adjust-size consumption billing">
+			  <label for="q14i1" >Bill 09: Start YYYY</label>
+			  <input type="text" id="q14i1" name="q14i1">
+			  <label for="q14i2" >MM</label>
+			  <input type="text" id="q14i2" name="q14i2">
+			  <label for="q14i3" >DD</label>
+			  <input type="text" id="q14i3" name="q14i3">
+			  <label for="q14i4" >End YYYY</label>
+			  <input type="text" id="q14i4" name="q14i4">
+			  <label for="q14i5" >MM</label>
+			  <input type="text" id="q14i5" name="q14i5">
+			  <label for="q14i6" >DD</label>
+			  <input type="text" id="q14i6" name="q14i6">
+			  <label for="q14i7" >Consumption m^3</label>
+			  <input type="text" id="q14i7" name="q14i7">
+			</div>
+			<p class="error q14i-error"></p>
+	
+			<div class="adjust-size consumption billing">
+			  <label for="q14j1" >Bill 10: Start YYYY</label>
+			  <input type="text" id="q14j1" name="q14j1">
+			  <label for="q14j2" >MM</label>
+			  <input type="text" id="q14j2" name="q14j2">
+			  <label for="q14j3" >DD</label>
+			  <input type="text" id="q14j3" name="q14j3">
+			  <label for="q14j4" >End YYYY</label>
+			  <input type="text" id="q14j4" name="q14j4">
+			  <label for="q14j5" >MM</label>
+			  <input type="text" id="q14j5" name="q14j5">
+			  <label for="q14j6" >DD</label>
+			  <input type="text" id="q14j6" name="q14j6">
+			  <label for="q14j7" >Consumption m^3</label>
+			  <input type="text" id="q14j7" name="q14j7">
+			</div>
+			<p class="error q14j-error"></p>
+	
+			<div class="adjust-size consumption billing">
+			  <label for="q14k1" >Bill 11: Start YYYY</label>
+			  <input type="text" id="q14k1" name="q14k1">
+			  <label for="q14k2" >MM</label>
+			  <input type="text" id="q14k2" name="q14k2">
+			  <label for="q14k3" >DD</label>
+			  <input type="text" id="q14k3" name="q14k3">
+			  <label for="q14k4" >End YYYY</label>
+			  <input type="text" id="q14k4" name="q14k4">
+			  <label for="q14k5" >MM</label>
+			  <input type="text" id="q14k5" name="q14k5">
+			  <label for="q14k6" >DD</label>
+			  <input type="text" id="q14k6" name="q14k6">
+			  <label for="q14k7" >Consumption m^3</label>
+			  <input type="text" id="q14k7" name="q14k7">
+			</div>
+			<p class="error q14k-error"></p>
+	
+			<div class="adjust-size consumption billing">
+			  <label for="q14l1" >Bill 12: Start YYYY</label>
+			  <input type="text" id="q14l1" name="q14l1">
+			  <label for="q14l2" >MM</label>
+			  <input type="text" id="q14l2" name="q14l2">
+			  <label for="q14l3" >DD</label>
+			  <input type="text" id="q14l3" name="q14l3">
+			  <label for="q14l4" >End YYYY</label>
+			  <input type="text" id="q14l4" name="q14l4">
+			  <label for="q14l5" >MM</label>
+			  <input type="text" id="q14l5" name="q14l5">
+			  <label for="q14l6" >DD</label>
+			  <input type="text" id="q14l6" name="q14l6">
+			  <label for="q14l7" >Consumption m^3</label>
+			  <input type="text" id="q14l7" name="q14l7">
+			</div>
+			<p class="error q14l-error"></p>
+
+
+			<!-- <div id="question14"></div> -->
+  
+			
+			<h3>3. Electricity Consumption Data</h3>
+  
+			<input type="file" id="excelFile2" accept=".xls,.xlsx"/>
+  
+			<p>fill the table below to indicate my electricity consumption. Note: the entries below can be populated by referring to your electricity bills (e.g. Figure 3 below). Please fill up to 12 entries. It is recommended to consider bills for at least 1 full year of electricity consumption. Your bills should come from the utility company in your region, such as Toronto Hydro. If you have consumption data for less than 1 full year, that is still fine.</p> <br>
+			<!-- !important, im not sure if i want to add any of the figures, we might just replace it with a short video instead at the end of the page -->
+			<p>Q15. Provide Information on up to 12 bills: consumption in kilo Watt hours (kW-hr); please note that in some regions the electricity price varies according to time of year and day. In such cases, simply report the total electricity used in the billing cycle by adding all the consumptions together.</p><br>
+			
+			<div class="adjust-size consumption billing">
+				<label for="q15a1">Bill 01: Start YYYY</label>
+				<input type="text" id="q15a1" name="q15a1">
+				<label for="q15a2">MM</label>
+				<input type="text" id="q15a2" name="q15a2">
+				<label for="q15a3">DD</label>
+				<input type="text" id="q15a3" name="q15a3">
+				<label for="q15a4">End YYYY</label>
+				<input type="text" id="q15a4" name="q15a4">
+				<label for="q15a5">MM</label>
+				<input type="text" id="q15a5" name="q15a5">
+				<label for="q15a6">DD</label>
+				<input type="text" id="q15a6" name="q15a6">
+				<label for="q15a7">Consumption (kW-hr)</label>
+				<input type="text" id="q15a7" name="q15a7">
+			  </div>
+			  <p class="error q15a-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15b1">Bill 02: Start YYYY</label>
+				<input type="text" id="q15b1" name="q15b1">
+				<label for="q15b2">MM</label>
+				<input type="text" id="q15b2" name="q15b2">
+				<label for="q15b3">DD</label>
+				<input type="text" id="q15b3" name="q15b3">
+				<label for="q15b4">End YYYY</label>
+				<input type="text" id="q15b4" name="q15b4">
+				<label for="q15b5">MM</label>
+				<input type="text" id="q15b5" name="q15b5">
+				<label for="q15b6">DD</label>
+				<input type="text" id="q15b6" name="q15b6">
+				<label for="q15b7">Consumption (kW-hr)</label>
+				<input type="text" id="q15b7" name="q15b7">
+			  </div>
+			  <p class="error q15b-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15c1">Bill 03: Start YYYY</label>
+				<input type="text" id="q15c1" name="q15c1">
+				<label for="q15c2">MM</label>
+				<input type="text" id="q15c2" name="q15c2">
+				<label for="q15c3">DD</label>
+				<input type="text" id="q15c3" name="q15c3">
+				<label for="q15c4">End YYYY</label>
+				<input type="text" id="q15c4" name="q15c4">
+				<label for="q15c5">MM</label>
+				<input type="text" id="q15c5" name="q15c5">
+				<label for="q15c6">DD</label>
+				<input type="text" id="q15c6" name="q15c6">
+				<label for="q15c7">Consumption (kW-hr)</label>
+				<input type="text" id="q15c7" name="q15c7">
+			  </div>
+			  <p class="error q15c-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15d1">Bill 04: Start YYYY</label>
+				<input type="text" id="q15d1" name="q15d1">
+				<label for="q15d2">MM</label>
+				<input type="text" id="q15d2" name="q15d2">
+				<label for="q15d3">DD</label>
+				<input type="text" id="q15d3" name="q15d3">
+				<label for="q15d4">End YYYY</label>
+				<input type="text" id="q15d4" name="q15d4">
+				<label for="q15d5">MM</label>
+				<input type="text" id="q15d5" name="q15d5">
+				<label for="q15d6">DD</label>
+				<input type="text" id="q15d6" name="q15d6">
+				<label for="q15d7">Consumption (kW-hr)</label>
+				<input type="text" id="q15d7" name="q15d7">
+			  </div>
+			  <p class="error q15d-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15e1">Bill 05: Start YYYY</label>
+				<input type="text" id="q15e1" name="q15e1">
+				<label for="q15e2">MM</label>
+				<input type="text" id="q15e2" name="q15e2">
+				<label for="q15e3">DD</label>
+				<input type="text" id="q15e3" name="q15e3">
+				<label for="q15e4">End YYYY</label>
+				<input type="text" id="q15e4" name="q15e4">
+				<label for="q15e5">MM</label>
+				<input type="text" id="q15e5" name="q15e5">
+				<label for="q15e6">DD</label>
+				<input type="text" id="q15e6" name="q15e6">
+				<label for="q15e7">Consumption (kW-hr)</label>
+				<input type="text" id="q15e7" name="q15e7">
+			  </div>
+			  <p class="error q15e-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15f1">Bill 06: Start YYYY</label>
+				<input type="text" id="q15f1" name="q15f1">
+				<label for="q15f2">MM</label>
+				<input type="text" id="q15f2" name="q15f2">
+				<label for="q15f3">DD</label>
+				<input type="text" id="q15f3" name="q15f3">
+				<label for="q15f4">End YYYY</label>
+				<input type="text" id="q15f4" name="q15f4">
+				<label for="q15f5">MM</label>
+				<input type="text" id="q15f5" name="q15f5">
+				<label for="q15f6">DD</label>
+				<input type="text" id="q15f6" name="q15f6">
+				<label for="q15f7">Consumption (kW-hr)</label>
+				<input type="text" id="q15f7" name="q15f7">
+			  </div>
+			  <p class="error q15f-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15g1">Bill 07: Start YYYY</label>
+				<input type="text" id="q15g1" name="q15g1">
+				<label for="q15g2">MM</label>
+				<input type="text" id="q15g2" name="q15g2">
+				<label for="q15g3">DD</label>
+				<input type="text" id="q15g3" name="q15g3">
+				<label for="q15g4">End YYYY</label>
+				<input type="text" id="q15g4" name="q15g4">
+				<label for="q15g5">MM</label>
+				<input type="text" id="q15g5" name="q15g5">
+				<label for="q15g6">DD</label>
+				<input type="text" id="q15g6" name="q15g6">
+				<label for="q15g7">Consumption (kW-hr)</label>
+				<input type="text" id="q15g7" name="q15g7">
+			  </div>
+			  <p class="error q15g-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15h1">Bill 08: Start YYYY</label>
+				<input type="text" id="q15h1" name="q15h1">
+				<label for="q15h2">MM</label>
+				<input type="text" id="q15h2" name="q15h2">
+				<label for="q15h3">DD</label>
+				<input type="text" id="q15h3" name="q15h3">
+				<label for="q15h4">End YYYY</label>
+				<input type="text" id="q15h4" name="q15h4">
+				<label for="q15h5">MM</label>
+				<input type="text" id="q15h5" name="q15h5">
+				<label for="q15h6">DD</label>
+				<input type="text" id="q15h6" name="q15h6">
+				<label for="q15h7">Consumption (kW-hr)</label>
+				<input type="text" id="q15h7" name="q15h7">
+			  </div>
+			  <p class="error q15h-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15i1">Bill 09: Start YYYY</label>
+				<input type="text" id="q15i1" name="q15i1">
+				<label for="q15i2">MM</label>
+				<input type="text" id="q15i2" name="q15i2">
+				<label for="q15i3">DD</label>
+				<input type="text" id="q15i3" name="q15i3">
+				<label for="q15i4">End YYYY</label>
+				<input type="text" id="q15i4" name="q15i4">
+				<label for="q15i5">MM</label>
+				<input type="text" id="q15i5" name="q15i5">
+				<label for="q15i6">DD</label>
+				<input type="text" id="q15i6" name="q15i6">
+				<label for="q15i7">Consumption (kW-hr)</label>
+				<input type="text" id="q15i7" name="q15i7">
+			  </div>
+			  <p class="error q15i-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15j1">Bill 10: Start YYYY</label>
+				<input type="text" id="q15j1" name="q15j1">
+				<label for="q15j2">MM</label>
+				<input type="text" id="q15j2" name="q15j2">
+				<label for="q15j3">DD</label>
+				<input type="text" id="q15j3" name="q15j3">
+				<label for="q15j4">End YYYY</label>
+				<input type="text" id="q15j4" name="q15j4">
+				<label for="q15j5">MM</label>
+				<input type="text" id="q15j5" name="q15j5">
+				<label for="q15j6">DD</label>
+				<input type="text" id="q15j6" name="q15j6">
+				<label for="q15j7">Consumption (kW-hr)</label>
+				<input type="text" id="q15j7" name="q15j7">
+			  </div>
+			  <p class="error q15j-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15k1">Bill 11: Start YYYY</label>
+				<input type="text" id="q15k1" name="q15k1">
+				<label for="q15k2">MM</label>
+				<input type="text" id="q15k2" name="q15k2">
+				<label for="q15k3">DD</label>
+				<input type="text" id="q15k3" name="q15k3">
+				<label for="q15k4">End YYYY</label>
+				<input type="text" id="q15k4" name="q15k4">
+				<label for="q15k5">MM</label>
+				<input type="text" id="q15k5" name="q15k5">
+				<label for="q15k6">DD</label>
+				<input type="text" id="q15k6" name="q15k6">
+				<label for="q15k7">Consumption (kW-hr)</label>
+				<input type="text" id="q15k7" name="q15k7">
+			  </div>
+			  <p class="error q15k-error"></p>
+	  
+			  <div class="adjust-size consumption billing">
+				<label for="q15l1">Bill 12: Start YYYY</label>
+				<input type="text" id="q15l1" name="q15l1">
+				<label for="q15l2">MM</label>
+				<input type="text" id="q15l2" name="q15l2">
+				<label for="q15l3">DD</label>
+				<input type="text" id="q15l3" name="q15l3">
+				<label for="q15l4">End YYYY</label>
+				<input type="text" id="q15l4" name="q15l4">
+				<label for="q15l5">MM</label>
+				<input type="text" id="q15l5" name="q15l5">
+				<label for="q15l6">DD</label>
+				<input type="text" id="q15l6" name="q15l6">
+				<label for="q15l7">Consumption (kW-hr)</label>
+				<input type="text" id="q15l7" name="q15l7">
+			  </div>
+			  <p class="error q15l-error"></p>
+			<!-- <div id="question15"></div> -->
+			
+			<h3>4. Other Information</h3>
+		  
+			<div>
+			  <label for="q16">Q16. Please provide any other information that you think may help this survey. Please do not disclose any personal, private, or identifying information about yourself.</label>
+			  <input type="text" id="q16" name="q16">
+			</div>
+			
+			
+			<div class="adjust-size">
+			  <input type="checkbox" id="consent" required>
+			  <label for="consent">I accept the <a href ="#consent">terms and conditions</a></label>
+			  <button type="submit" id="button">Submit</button>
+			  
+			</div>
+  
+			<!-- <script>const consentCheckbox = document.getElementById('consent');
+			  const submitButton = document.getElementById('button');
+			  
+			  submitButton.addEventListener('click', (event) => {
+				if (!consentCheckbox.checked) {
+				  event.preventDefault();
+				  consentCheckbox.style.border = '2px solid red';
+				  alert('Please accept the terms and conditions before submitting the form.');
+				}
+			  });</script> -->
+			</form>
+		  </div>
+		  <br>
+  
+		  <div class="grey-container">
+			<h3 id="consent">5. Participant Consent Form</h3>
+			<p>Title of the Study: Residential Home Energy Consumption Survey 
+			  <br><br>Researcher: Professor Amir A. Aliabadi, School of Engineering, University of Guelph, RICH 2515, University of Guelph, Guelph, ON, Canada, N1G 2W1, 519-824-4120 x.54862, <a href="mailto:aliabadi@uoguelph.ca" id="email">aliabadi@uoguelph.ca</a> 
+			  <br><br>Introduction: You are being invited to participate in a research project that aims to collect information about your residential home fuel (e.g. natural gas) and electricity consumption. Before you decide whether to participate, it is important that you understand why the study is being conducted, what participation involves, and what risks and benefits are associated with participation. Please take the time to read this consent form carefully and ask any questions you may have before making your decision. Purpose: The purpose of this study is to collect information about your residential home fuel (e.g. natural gas) and electricity consumption patterns in order to gain a better understanding of how these resources are used in Canada. Data will be used to understand building performance, develop prediction and design models, and lead innovation to reduce building energy consumption.
+			  <br><br>Inclusion and Exclusion Criteria: To be eligible to participate, you must be A home owner or be able to provide information about a home.
+			  <br><br>Nature of Participation: If you decide to participate, you will be asked to provide information about your fuel (e.g. natural gas) and electricity consumption patterns over a period of up to one year through an online survey. You will also have the option to participate in a follow-up survey at a later date to submit more energy consumption data. Participation is voluntary and you are free to withdraw at anytime without penalty.
+			  <br><br>Duration of Participation: Your participation in this study is expected to last for approximately 20 minutes if completed correctly. You will be asked to complete the online survey once, and may be invited to participate in a follow-up survey in the future.
+			  <br><br>Procedures: You will be asked to complete an online survey that will take approximately 20 minutes to complete. The survey will include questions about your fuel (e.g. natural gas) and electricity consumption bills and your home general features. Your responses will be kept confidential and will only be used for research purposes.
+			  <br><br>Responsibilities of the Participant: As a participant in this study, your responsibilities include providing accurate information about your residential home fuel (e.g. natural gas) and electricity consumption bills, and completing the online survey to the best of your ability.
+			  <br><br>Risks: There are no anticipated risks associated with participation in this study. Even though energy consumption data is provided, your participation is anonymous, so you cannot be identified.
+			  <br><br>Benefits: Once we finish our analysis of building energy data, participants can compare their energy consumption with average statistics. This can give them incentive to save extra energy for their buildings. Climate change is the greatest existential threat to humans. 40% of world energy consumption is by buildings, and thus 40% of greenhouse gas emissions are caused by buildings. Understanding building energy consumption and ways to mitigate harmful environmental impact is of paramount priority.
+			  <br><br>Obligation to Participate: You are under no obligation to participate in this study.
+			  <br><br>Withdrawal: You are free to withdraw from the survey prior to submitting the data at any time without prejudice to pre-existing entitlements.
+			  <br><br>Data Withdrawal: You are free to withdraw your data from the study prior to the data analysis and publication of the results without prejudice to pre-existing entitlements. If you choose to withdraw, your data will be destroyed permanently and will not be used in the study. If you have submitted your data but wish to withdraw it prior to data analysis and publication of the results, please provide your postal code to the researcher, so your data can be deleted and removed from the analysis.
+			  <br><br>Commercialization: There is no commercial interest in the study.
+			  <br><br>Conflicts of Interest: There are no real, potential, or perceived conflicts of interest on the part of the researchers, their institutions or the research sponsors.
+			  <br><br>Dissemination of Results: The results of this study will be disseminated through research papers, pre- sentations, posters, reports, etc. based on the data collected. Participants will not be identified directly or indirectly in any reports or publications.
+			  <br><br>Qualified Designated Representative: If you have any questions about the scientific or scholarly aspects of the research, you may contact Amir A. Aliabadi.
+			  <br><br>Ethical Issues: If you have any ethical concerns about the study, you may <a href= "contact.html" >contact Amir A. Aliabadi.</a> If you have any questions regarding your rights and welfare as a research participant in this survey.</p>
+		  </div>
+		  <br><br>
+		  <img src="AIR Logo Text.jpg" width="200"/>
+	  </div>
+  
+  
+	  <script>
+		  function generateContentQ14() {
+			const container = document.getElementById("question14");
+			let content = "";
+	  
+			for (let i = 1; i <= 12; i++) {
+			  const letter = String.fromCharCode(96 + i); // Convert i to alphabet (a, b, c, ...)
+			  content += `
+			  <div class="adjust-size consumption billing">
+				<label for="q14${letter}1">Bill ${i}: Start YYYY</label>
+				<input type="text" id="q14${letter}1" name="q14${letter}1">
+				<label for="q14${letter}2">MM</label>
+				<input type="text" id="q14${letter}2" name="q14${letter}2">
+				<label for="q14${letter}3">DD</label>
+				<input type="text" id="q14${letter}3" name="q14${letter}3">
+				<label for="q14${letter}4">End YYYY</label>
+				<input type="text" id="q14${letter}4" name="q14${letter}4">
+				<label for="q14${letter}5">MM</label>
+				<input type="text" id="q14${letter}5" name="q14${letter}5">
+				<label for="q14${letter}6">DD</label>
+				<input type="text" id="q14${letter}6" name="q14${letter}6">
+				<label for="q14${letter}7">Consumption m^3</label>
+				<input type="text" id="q14${letter}7" name="q14${letter}7">
+			  </div>`;
+			}
+	  
+			container.innerHTML = content;
+		  }
+	  
+		  function generateContentQ15() {
+			const container = document.getElementById("question15");
+			let content = "";
+	  
+			for (let i = 1; i <= 12; i++) {
+			  const letter = String.fromCharCode(96 + i); // Convert i to alphabet (a, b, c, ...)
+			  content += `
+			  <div class="adjust-size consumption billing">
+				<label for="q15${letter}1">Bill ${i}: Start YYYY</label>
+				<input type="text" id="q15${letter}1" name="q15${letter}1">
+				<label for="q15${letter}2">MM</label>
+				<input type="text" id="q15${letter}2" name="q15${letter}2">
+				<label for="q15${letter}3">DD</label>
+				<input type="text" id="q15${letter}3" name="q15${letter}3">
+				<label for="q15${letter}4">End YYYY</label>
+				<input type="text" id="q15${letter}4" name="q15${letter}4">
+				<label for="q15${letter}5">MM</label>
+				<input type="text" id="q15${letter}5" name="q15${letter}5">
+				<label for="q15${letter}6">DD</label>
+				<input type="text" id="q15${letter}6" name="q15${letter}6">
+				<label for="q15${letter}7">Consumption m^3</label>
+				<input type="text" id="q15${letter}7" name="q15${letter}7">
+			  </div>`;
+			}
+	  
+			container.innerHTML = content;
+		  }
+		  document.addEventListener("DOMContentLoaded", generateContentQ14);
+		  document.addEventListener("DOMContentLoaded", generateContentQ15);
+  
+  
+  
+		  
+  
+		</script>
+	  
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.8/xlsx.full.min.js"></script>
+
+		
+		<script src="myscript.js"></script>
+</body>
+</html>
